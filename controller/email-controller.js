@@ -1,4 +1,4 @@
-import Email from  "../model/email.js";
+import Email from "../model/email.js";
 
 export const saveSendEmails = async (request, response) => {
     try {

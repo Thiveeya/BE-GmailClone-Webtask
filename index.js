@@ -1,28 +1,25 @@
-import express from  'express';
+
+import express from 'express';
 import cors from 'cors';
+
 import routes from './routes/route.js';
 import Connection from './database/db.js';
-import dotenv from 'dotenv';
-dotenv.config();
-
-
-const port = process.env.PORT
 const app = express();
 
 app.use(cors());
-app.use(
-    express.urlencoded({ extended: true })
-);
+ app.use(
+     express.urlencoded({ extended: true })
+ );
     
-app.use(express.json({extended:true}));
+ app.use(express.json());
 
-
-app.use('/', routes);
-app.get("/", (req, res) => {
-    res.send("GmailClone working");
-})
+ app.use('/', routes);
+     
 
 Connection();
-app.listen(port, () => {
-    console.log(`Server connected in Localhost:${port}`);
-})
+const PORT =  3001;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+

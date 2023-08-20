@@ -3,19 +3,30 @@ import mongoose from 'mongoose';
 const EmailSchema = mongoose.Schema({
     to: {
         type: String,
-        required: true
-    },
+        required: true,
+          },
     from: {
         type: String,
-        required: true
+        required: true,
+        
     },
-    subject: String,
-    body: String,
+    
+    subject:{
+           type:String,
+           required:true
+    },
+    body: {
+        type:String,
+        required:true
+ },
     date: {
         type: Date,
         required: true
     },
-    image: String,
+    image: {
+        type:String,
+        required:true
+ },
     name: {
         type: String,
         required: true
